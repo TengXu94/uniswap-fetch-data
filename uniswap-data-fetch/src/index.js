@@ -23,8 +23,7 @@ let pair = getPair(DAI, WETH[DAI.chainId])
 const DAIUSDCPair = getPair(DAI, USDC)
 Promise.all([pair, DAIUSDCPair]).then(([pair, result2]) => {
 	console.log(pair);
-	const route = new Route([pair, result2], WETH[DAI.chainId]);
-	console.log(route.midPrice.toSignificant(6));
+	const route = new Route([pair, result2], WETH[DAI.chainId]); console.log(route.midPrice.toSignificant(6));
 	console.log(route.midPrice.invert().toSignificant(6));
 });
 
